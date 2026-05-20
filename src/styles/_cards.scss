@@ -1,0 +1,353 @@
+@use './tokens' as *;
+
+.value-card,
+.feature-card,
+.price-card,
+.testimonial-card,
+.contact-form {
+  background: $surface-white;
+  box-shadow: $shadow-soft;
+}
+
+.value-card {
+  min-height: 260px;
+  border-radius: 24px;
+  padding: 34px;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow;
+  }
+
+  svg {
+    width: 30px;
+    height: 30px;
+    color: $primary;
+  }
+
+  h3 {
+    margin-top: 28px;
+    color: $on-surface;
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+
+  p {
+    margin-top: 13px;
+    color: $on-surface-variant;
+    font-size: 0.94rem;
+    line-height: 1.65;
+  }
+
+  &--warning svg {
+    color: #976300;
+  }
+
+  &--earth svg {
+    color: $earth;
+  }
+}
+
+.feature-card {
+  display: flex;
+  min-height: 238px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  border-radius: 22px;
+  background: $surface-low;
+  padding: 32px;
+  box-shadow: none;
+
+  svg {
+    width: 32px;
+    height: 32px;
+    color: $primary;
+  }
+
+  h3 {
+    margin-top: 22px;
+    color: $on-surface;
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 1.28rem;
+  }
+
+  p {
+    max-width: 420px;
+    margin-top: 12px;
+    color: $on-surface-variant;
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  img {
+    width: 190px;
+    height: 190px;
+    border-radius: 18px;
+    object-fit: cover;
+  }
+
+  &--wide {
+    grid-column: span 2;
+    background: $surface-high;
+  }
+
+  &--primary {
+    background: $primary-container;
+    color: #ffffff;
+
+    svg,
+    h3,
+    p {
+      color: inherit;
+    }
+
+    p {
+      opacity: 0.88;
+    }
+  }
+}
+
+.price-card {
+  position: relative;
+  display: flex;
+  min-height: 520px;
+  flex-direction: column;
+  border-radius: 24px;
+  padding: 34px;
+
+  &__eyebrow {
+    color: $on-surface-variant;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    margin-top: 10px;
+    color: $on-surface;
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 1.55rem;
+  }
+
+  &__description {
+    margin-top: 8px;
+    color: $on-surface-variant;
+    font-size: 0.92rem;
+  }
+
+  &__price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 9px;
+    margin-top: 28px;
+
+    strong {
+      color: $on-surface;
+      font-family: 'Manrope', system-ui, sans-serif;
+      font-size: clamp(2.1rem, 4vw, 2.8rem);
+      line-height: 1;
+    }
+
+    span {
+      color: $on-surface-variant;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+  }
+
+  ul {
+    display: grid;
+    gap: 14px;
+    margin: 34px 0;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: $on-surface-variant;
+    font-weight: 600;
+
+    svg {
+      width: 18px;
+      height: 18px;
+      color: $primary;
+    }
+  }
+
+  .button {
+    margin-top: auto;
+  }
+
+  &--highlighted {
+    background: $primary;
+    color: #ffffff;
+    transform: translateY(-16px);
+    box-shadow: 0 28px 52px rgba($primary, 0.25);
+
+    h3,
+    .price-card__price strong,
+    li,
+    svg {
+      color: #ffffff;
+    }
+
+    .price-card__eyebrow,
+    .price-card__description,
+    .price-card__price span {
+      color: rgba(#ffffff, 0.78);
+    }
+  }
+}
+
+.badge {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  border-radius: 999px;
+  background: $primary-fixed;
+  color: #002203;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.66rem;
+  font-weight: 900;
+  padding: 7px 11px;
+  text-transform: uppercase;
+}
+
+.team-member {
+  text-align: center;
+
+  img {
+    width: min(100%, 178px);
+    aspect-ratio: 1;
+    margin-inline: auto;
+    border-radius: 999px;
+    filter: grayscale(1);
+    object-fit: cover;
+    transition:
+      filter 220ms ease,
+      transform 220ms ease;
+  }
+
+  &:hover img {
+    filter: grayscale(0);
+    transform: translateY(-3px);
+  }
+
+  h3 {
+    margin-top: 18px;
+    color: $on-surface;
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 1.05rem;
+  }
+
+  p {
+    margin-top: 4px;
+    color: $on-surface-variant;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+}
+
+.testimonial-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 34px;
+  padding: clamp(36px, 6vw, 72px);
+
+  .quote-mark {
+    display: block;
+    color: rgba($primary, 0.18);
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 6rem;
+    font-weight: 800;
+    line-height: 0.65;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(28px, 5vw, 72px);
+    margin-top: 10px;
+  }
+
+  blockquote {
+    color: $on-surface;
+    font-size: clamp(1.2rem, 2vw, 1.55rem);
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.45;
+  }
+
+  figcaption {
+    display: grid;
+    gap: 4px;
+    margin-top: 24px;
+    color: $on-surface-variant;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.82rem;
+
+    strong {
+      color: $on-surface;
+      font-family: 'Manrope', system-ui, sans-serif;
+      font-size: 0.95rem;
+    }
+  }
+}
+
+.faq-item {
+  border-radius: 18px;
+  background: $surface-low;
+
+  button {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    border: 0;
+    background: transparent;
+    color: $on-surface;
+    cursor: pointer;
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-weight: 800;
+    padding: 22px 24px;
+    text-align: left;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      color: $primary;
+      transition: transform 180ms ease;
+    }
+  }
+
+  p {
+    display: none;
+    padding: 0 24px 22px;
+    color: $on-surface-variant;
+    line-height: 1.65;
+  }
+
+  &--open {
+    background: $surface-white;
+    box-shadow: $shadow-soft;
+
+    button svg {
+      transform: rotate(180deg);
+    }
+
+    p {
+      display: block;
+    }
+  }
+}

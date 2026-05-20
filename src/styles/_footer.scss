@@ -1,0 +1,44 @@
+@use './tokens' as *;
+
+.site-footer {
+  background: $surface-high;
+  color: $on-surface-variant;
+  padding: 58px 0 30px;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1.4fr repeat(3, 1fr);
+    gap: 42px;
+  }
+
+  h2 {
+    margin-bottom: 14px;
+    color: $primary;
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 0.95rem;
+  }
+
+  p,
+  a {
+    display: block;
+    max-width: 280px;
+    color: $on-surface-variant;
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  a + a {
+    margin-top: 9px;
+  }
+
+  .brand {
+    margin-bottom: 14px;
+  }
+
+  &__copy {
+    max-width: none;
+    margin-top: 48px;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+}

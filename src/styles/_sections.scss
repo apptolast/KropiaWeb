@@ -1,0 +1,128 @@
+@use './tokens' as *;
+
+.value-section {
+  border-radius: 44px 44px 0 0;
+  background: $surface-low;
+}
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+
+.features-section {
+  background: $surface;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 56px;
+}
+
+
+.process-section {
+  background: $surface-white;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.45fr;
+    gap: clamp(48px, 8vw, 112px);
+    align-items: start;
+  }
+
+  .section-heading {
+    position: sticky;
+    top: 110px;
+  }
+}
+
+.process-list {
+  display: grid;
+  gap: 38px;
+}
+
+.process-step {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 30px;
+
+  span {
+    color: $surface-highest;
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 0.9;
+    transition: color 180ms ease;
+  }
+
+  h3 {
+    color: $on-surface;
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 1.35rem;
+  }
+
+  p {
+    margin-top: 8px;
+    color: $on-surface-variant;
+    line-height: 1.65;
+  }
+
+  &:hover span {
+    color: $primary;
+  }
+}
+
+.pricing-section {
+  background: $surface-low;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 56px;
+  align-items: stretch;
+}
+
+
+.team-section {
+  background: $surface;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+  margin-top: 56px;
+}
+
+
+.testimonials-section {
+  background: $surface;
+}
+
+.faq-section {
+  background: $surface;
+}
+
+.faq-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 38px;
+}
+
+.contact-section {
+  border-radius: 44px 44px 0 0;
+  background: $surface-low;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.08fr;
+    gap: clamp(48px, 9vw, 112px);
+    align-items: center;
+  }
+}
