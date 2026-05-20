@@ -1,0 +1,163 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: apptolast-kropia-web
+  labels:
+    app.kubernetes.io/name: kropia-web
+    app.kubernetes.io/part-of: kropia
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: kropia-apptolast-com-tls
+  namespace: apptolast-kropia-web
+  labels:
+    app.kubernetes.io/name: kropia-web
+    app.kubernetes.io/part-of: kropia
+spec:
+  secretName: kropia-apptolast-com-tls
+  duration: 2160h
+  renewBefore: 720h
+  dnsNames:
+    - kropia.apptolast.com
+  issuerRef:
+    group: cert-manager.io
+    kind: ClusterIssuer
+    name: cloudflare-clusterissuer
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: redirect-https
+  namespace: apptolast-kropia-web
+  labels:
+    app.kubernetes.io/name: kropia-web
+    app.kubernetes.io/part-of: kropia
+spec:
+  redirectScheme:
+    scheme: https
+    permanent: true
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kropia-web
+  namespace: apptolast-kropia-web
+  annotations:
+    keel.sh/policy: force
+    keel.sh/pollSchedule: "@every 1m"
+    keel.sh/trigger: poll
+  labels:
+    app: kropia-web
+    app.kubernetes.io/name: kropia-web
+    app.kubernetes.io/part-of: kropia
+spec:
+  replicas: 2
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: kropia-web
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: kropia-web
+        app.kubernetes.io/name: kropia-web
+        app.kubernetes.io/part-of: kropia
+    spec:
+      containers:
+        - name: kropia-web
+          image: apptolast/kropia-web:latest
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 30
+            timeoutSeconds: 2
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: 25m
+              memory: 32Mi
+            limits:
+              cpu: 100m
+              memory: 128Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kropia-web
+  namespace: apptolast-kropia-web
+  labels:
+    app: kropia-web
+    app.kubernetes.io/name: kropia-web
+    app.kubernetes.io/part-of: kropia
+spec:
+  type: ClusterIP
+  selector:
+    app: kropia-web
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: kropia-web
+  namespace: apptolast-kropia-web
+  labels:
+    app: kropia-web
+    app.kubernetes.io/name: kropia-web
+    app.kubernetes.io/part-of: kropia
+spec:
+  entryPoints:
+    - web
+  routes:
+    - kind: Rule
+      match: Host(`kropia.apptolast.com`)
+      middlewares:
+        - name: redirect-https
+      services:
+        - name: kropia-web
+          port: 80
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: kropia-web-tls
+  namespace: apptolast-kropia-web
+  labels:
+    app: kropia-web
+    app.kubernetes.io/name: kropia-web
+    app.kubernetes.io/part-of: kropia
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`kropia.apptolast.com`)
+      services:
+        - name: kropia-web
+          port: 80
+  tls:
+    secretName: kropia-apptolast-com-tls
