@@ -19,6 +19,8 @@ export function FaqSection() {
               <FaqItem
                 key={faq.question}
                 {...faq}
+                answerId={`faq-answer-${index}`}
+                buttonId={`faq-trigger-${index}`}
                 isOpen={isOpen}
                 onToggle={() => setOpenIndex(isOpen ? -1 : index)}
               />

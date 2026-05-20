@@ -28,16 +28,34 @@ export function ContactSection() {
           <div className="form-grid">
             <label>
               Nombre
-              <input name="user_name" type="text" placeholder="Su nombre completo" required />
+              <input
+                name="user_name"
+                type="text"
+                placeholder="Su nombre completo"
+                autoComplete="name"
+                required
+              />
             </label>
             <label>
               Teléfono
-              <input name="user_phone" type="tel" placeholder="600 000 000" required />
+              <input
+                name="user_phone"
+                type="tel"
+                placeholder="600 000 000"
+                autoComplete="tel"
+                required
+              />
             </label>
           </div>
           <label>
             Email
-            <input name="user_email" type="email" placeholder="correo@ejemplo.com" required />
+            <input
+              name="user_email"
+              type="email"
+              placeholder="correo@ejemplo.com"
+              autoComplete="email"
+              required
+            />
           </label>
           <label>
             Número de invernaderos
@@ -52,11 +70,24 @@ export function ContactSection() {
             <textarea name="message" rows="5" placeholder="¿En qué podemos ayudarle?" />
           </label>
           <input type="hidden" name="project_name" value="Kropia" />
-          <button className="button contact-form__submit" type="submit" disabled={isSending}>
+          <button
+            className="button contact-form__submit"
+            type="submit"
+            disabled={isSending}
+            aria-busy={isSending}
+          >
             <Send aria-hidden="true" />
             {isSending ? 'Enviando...' : 'Enviar solicitud'}
           </button>
-          {status.text && <p className={`form-status form-status--${status.type}`}>{status.text}</p>}
+          {status.text && (
+            <p
+              className={`form-status form-status--${status.type}`}
+              role={status.type === 'error' ? 'alert' : 'status'}
+              aria-live="polite"
+            >
+              {status.text}
+            </p>
+          )}
         </form>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import { Signal, Sprout } from 'lucide-react'
 
+import heroDeviceImage from '../assets/hero-device.jpg'
 import { StoreBadge } from '../components/ui/StoreBadge'
 
 export function HeroSection() {
@@ -23,9 +24,9 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="hero-device" aria-label="Vista previa de la app Kropia">
+        <div className="hero-device" aria-hidden="true">
           <div className="hero-device__plate">
-            <img src="/assets/hero-device.jpg" alt="" />
+            <img src={heroDeviceImage} alt="" decoding="async" fetchPriority="high" />
           </div>
           <div className="sensor-panel sensor-panel--top">
             <Signal aria-hidden="true" />

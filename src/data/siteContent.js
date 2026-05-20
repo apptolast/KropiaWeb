@@ -10,6 +10,12 @@ import {
   Zap,
 } from 'lucide-react'
 
+import greenhouseImage from '../assets/greenhouse.jpg'
+import teamAlbertoImage from '../assets/team-alberto.jpg'
+import teamJesusImage from '../assets/team-jesus.jpg'
+import teamJoseImage from '../assets/team-jose.jpg'
+import teamPabloImage from '../assets/team-pablo.jpg'
+
 export const navItems = [
   { label: 'Inicio', href: '#inicio' },
   { label: 'Funcionalidades', href: '#funcionalidades' },
@@ -48,7 +54,7 @@ export const featureCards = [
     title: 'Monitorización',
     text: 'Visualización constante de parámetros críticos como temperatura de suelo, aire y niveles de CO2.',
     className: 'feature-card--wide',
-    image: '/assets/greenhouse.jpg',
+    image: greenhouseImage,
   },
   {
     icon: Zap,
@@ -134,22 +140,22 @@ export const teamMembers = [
   {
     name: 'Jesús',
     role: 'Dirección Técnica',
-    image: '/assets/team-jesus.jpg',
+    image: teamJesusImage,
   },
   {
     name: 'José',
     role: 'Hardware & Sensores',
-    image: '/assets/team-jose.jpg',
+    image: teamJoseImage,
   },
   {
     name: 'Pablo',
     role: 'Desarrollo App',
-    image: '/assets/team-pablo.jpg',
+    image: teamPabloImage,
   },
   {
     name: 'Alberto',
     role: 'Soporte y Clientes',
-    image: '/assets/team-alberto.jpg',
+    image: teamAlbertoImage,
   },
 ]
 

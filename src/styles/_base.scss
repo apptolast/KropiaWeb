@@ -1,0 +1,130 @@
+@use './tokens' as *;
+
+:root {
+  color: $on-surface;
+  background: $surface;
+  font-family: 'Work Sans', system-ui, sans-serif;
+  font-size: 16px;
+  font-synthesis: none;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  background: $surface;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+svg {
+  display: block;
+  flex: 0 0 auto;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+blockquote {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+#root {
+  min-height: 100svh;
+  background:
+    linear-gradient(180deg, rgba($surface-high, 0.26), transparent 280px),
+    $surface;
+}
+
+.container {
+  width: min(100% - 48px, 1180px);
+  margin-inline: auto;
+
+  &--narrow {
+    width: min(100% - 48px, 760px);
+  }
+}
+
+.section {
+  padding: 96px 0;
+}
+
+.section-heading {
+  max-width: 560px;
+
+  h2 {
+    color: $on-surface;
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: 0;
+  }
+
+  p {
+    margin-top: 14px;
+    color: $on-surface-variant;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  &--center {
+    margin-inline: auto;
+    text-align: center;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

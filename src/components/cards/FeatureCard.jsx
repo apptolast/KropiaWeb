@@ -6,7 +6,14 @@ export function FeatureCard({ className = '', icon: Icon, image, text, title }) 
         <h3>{title}</h3>
         <p>{text}</p>
       </div>
-      {image && <img src={image} alt="Interior de un invernadero monitorizado" />}
+      {image && (
+        <img
+          src={image}
+          alt="Interior de un invernadero monitorizado"
+          loading="lazy"
+          decoding="async"
+        />
+      )}
     </article>
   )
 }

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 
 import { navItems } from '../../data/siteContent'
@@ -8,6 +8,22 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   const closeMenu = () => setIsOpen(false)
+
+  useEffect(() => {
+    if (!isOpen) {
+      return undefined
+    }
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        closeMenu()
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [isOpen])
 
   return (
     <header className="site-header">

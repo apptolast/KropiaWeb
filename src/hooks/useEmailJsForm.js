@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react'
-import emailjs from '@emailjs/browser'
 
 import { emailConfig, hasEmailConfig } from '../config/email'
 
@@ -24,6 +23,8 @@ export function useEmailJsForm() {
 
     try {
       setIsSending(true)
+      const { default: emailjs } = await import('@emailjs/browser')
+
       await emailjs.sendForm(emailConfig.serviceId, emailConfig.templateId, formRef.current, {
         publicKey: emailConfig.publicKey,
       })
