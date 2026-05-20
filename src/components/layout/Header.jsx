@@ -16,7 +16,7 @@ export function Header() {
 
     const handleKeyDown = (event) => {
       if (event.key === 'Escape') {
-        closeMenu()
+        setIsOpen(false)
       }
     }
 

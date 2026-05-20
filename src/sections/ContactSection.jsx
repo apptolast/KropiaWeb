@@ -83,7 +83,7 @@ export function ContactSection() {
             <p
               className={`form-status form-status--${status.type}`}
               role={status.type === 'error' ? 'alert' : 'status'}
-              aria-live="polite"
+              aria-live={status.type === 'error' ? 'assertive' : 'polite'}
             >
               {status.text}
             </p>
