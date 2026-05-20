@@ -1196,6 +1196,7 @@ li {
     left: calc(min(100vw, 390px) - 60px);
 
     &::before {
+      grid-area: 1 / 1;
       width: 18px;
       height: 2px;
       border-radius: 999px;
@@ -1208,6 +1209,23 @@ li {
 
     svg {
       display: none;
+    }
+
+    &--open {
+      &::before {
+        box-shadow: none;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        grid-area: 1 / 1;
+        width: 18px;
+        height: 2px;
+        border-radius: 999px;
+        background: currentColor;
+        content: '';
+        transform: rotate(-45deg);
+      }
     }
   }
 
