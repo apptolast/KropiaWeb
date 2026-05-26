@@ -25,11 +25,12 @@ export function Footer() {
         </div>
         <div>
           <h2>Contacto</h2>
-          <p>Calle Tecnológica 42, 04001 Almería, España</p>
           <a href="mailto:info@kropia.es">info@kropia.es</a>
         </div>
       </div>
-      <p className="site-footer__copy">© 2026 Kropia by AppToLast. Todos los derechos reservados.</p>
+      <div className="container site-footer__bottom">
+        <p className="site-footer__copy">© 2026 Kropia by AppToLast. Todos los derechos reservados.</p>
+      </div>
     </footer>
   )
 }

@@ -8,16 +8,15 @@
 
   &__grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.12fr) minmax(340px, 0.78fr);
+    grid-template-columns: minmax(0, 1fr) minmax(430px, 0.98fr);
     align-items: center;
-    gap: clamp(40px, 6vw, 84px);
+    gap: clamp(32px, 4vw, 64px);
   }
 
   &__copy {
     max-width: 720px;
 
     h1 {
-      margin-top: 24px;
       color: $on-surface;
       font-family: 'Manrope', system-ui, sans-serif;
       font-size: clamp(2.9rem, 4.6vw, 4.65rem);
@@ -62,33 +61,18 @@
 
 .store-badge {
   display: inline-flex;
-  min-height: 48px;
   align-items: center;
-  gap: 10px;
-  border-radius: 999px;
-  background: $surface-highest;
-  color: $on-surface;
-  font-family: 'Inter', system-ui, sans-serif;
-  font-weight: 800;
-  padding: 0 19px;
+  line-height: 0;
   transition: transform 180ms ease;
 
   &:hover {
     transform: translateY(-2px);
   }
 
-  svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  small {
+  img {
     display: block;
-    color: $on-surface-variant;
-    font-size: 0.62rem;
-    font-weight: 800;
-    line-height: 1;
-    text-transform: uppercase;
+    width: auto;
+    height: 48px;
   }
 }
 
@@ -96,21 +80,45 @@
   position: relative;
   isolation: isolate;
   margin-left: auto;
-  width: min(100%, 470px);
-  transform: rotate(2deg);
+  width: min(100%, 760px);
 
-  &__plate {
-    overflow: hidden;
-    border-radius: 42px;
-    background: $surface-highest;
-    box-shadow:
-      0 34px 70px rgba(26, 28, 26, 0.18),
-      inset 0 0 0 8px rgba($on-surface, 0.16);
+  &__screens {
+    position: relative;
+    min-height: 548px;
+  }
+
+  &__screen {
+    position: absolute;
+    bottom: 10px;
+    width: 40%;
+    max-width: 278px;
+    margin: 0;
 
     img {
+      display: block;
       width: 100%;
-      aspect-ratio: 1.05;
-      object-fit: cover;
+      height: auto;
+      filter: drop-shadow(0 28px 30px rgba(0, 0, 0, 0.2));
+    }
+
+    &--left {
+      left: 0;
+      z-index: 1;
+      transform: translateY(28px) rotate(-5deg);
+    }
+
+    &--primary {
+      left: 50%;
+      z-index: 3;
+      width: 49%;
+      max-width: 338px;
+      transform: translateX(-50%);
+    }
+
+    &--right {
+      right: 0;
+      z-index: 2;
+      transform: translateY(32px) rotate(5deg);
     }
   }
 }

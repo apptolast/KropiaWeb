@@ -98,15 +98,17 @@
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: 10px;
   color: $primary;
   font-family: 'Manrope', system-ui, sans-serif;
   font-weight: 800;
 
-  svg {
-    width: 22px;
-    height: 22px;
-    fill: rgba($primary-fixed, 0.55);
+  img {
+    width: 44px;
+    height: 44px;
+    margin: -6px -3px -6px -6px;
+    object-fit: contain;
+    transform: scale(1.42);
   }
 }
 

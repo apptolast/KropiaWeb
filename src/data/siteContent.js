@@ -13,7 +13,6 @@ import {
 import greenhouseImage from '../assets/greenhouse.jpg'
 import teamAlbertoImage from '../assets/team-alberto.jpg'
 import teamJesusImage from '../assets/team-jesus.jpg'
-import teamJoseImage from '../assets/team-jose.jpg'
 import teamPabloImage from '../assets/team-pablo.jpg'
 
 export const navItems = [
@@ -138,24 +137,39 @@ export const pricingPlans = [
 
 export const teamMembers = [
   {
-    name: 'Jesús',
-    role: 'Dirección Técnica',
-    image: teamJesusImage,
-  },
-  {
-    name: 'José',
-    role: 'Hardware & Sensores',
-    image: teamJoseImage,
-  },
-  {
-    name: 'Pablo',
-    role: 'Desarrollo App',
-    image: teamPabloImage,
-  },
-  {
-    name: 'Alberto',
-    role: 'Soporte y Clientes',
+    name: 'Alberto Hidalgo',
+    role: 'Co-Founder & Lead Mobile Architect',
+    bio: 'Arquitecto visual y especialista en KMP. Crea interfaces nativas unificadas con una sola base de código para reducir fricción entre plataformas.',
+    superpower: 'Convergencia Multiplataforma',
+    stack: ['Kotlin', 'KMP', 'Compose', 'Swift'],
     image: teamAlbertoImage,
+    social: {
+      linkedin: 'https://www.linkedin.com/in/alberto-h-93431a42/',
+      github: 'https://github.com/hgarciaalberto',
+    },
+  },
+  {
+    name: 'Pablo Hurtado',
+    role: 'Co-Founder & Head of Infrastructure',
+    bio: 'Ingeniero de infraestructura privada. Diseña servicios rápidos, escalables y resistentes para que las plataformas funcionen sin intermediarios.',
+    superpower: 'Infraestructura Resiliente',
+    stack: ['CI/CD', 'Java', 'Python', 'Cloud Sec'],
+    image: teamPabloImage,
+    social: {
+      linkedin: 'https://www.linkedin.com/in/pablo-hurtado-gonzalo-9a5478237/',
+      github: 'https://github.com/PabloHurtadoGonzalo86',
+    },
+  },
+  {
+    name: 'Jesús Hidalgo',
+    role: 'Business Strategy & Automation Lead',
+    bio: 'Estratega y experto en sistemas industriales. Convierte necesidades de negocio complejas en automatizaciones útiles para operaciones reales.',
+    superpower: 'Automatización Estratégica',
+    stack: ['Industrial IoT', 'AI Strategy', 'Business'],
+    image: teamJesusImage,
+    social: {
+      linkedin: 'https://www.linkedin.com/in/jesus-hidalgo-garcia/',
+    },
   },
 ]
 

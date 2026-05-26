@@ -3,7 +3,7 @@
 .site-footer {
   background: $surface-high;
   color: $on-surface-variant;
-  padding: 58px 0 30px;
+  padding: 48px 0 24px;
 
   &__grid {
     display: grid;
@@ -35,10 +35,19 @@
     margin-bottom: 14px;
   }
 
+  &__bottom {
+    margin-top: 34px;
+    border-top: 1px solid rgba($outline-variant, 0.72);
+    padding-top: 18px;
+
+    .site-footer__copy {
+      max-width: none;
+      margin-inline: auto;
+      text-align: center;
+    }
+  }
+
   &__copy {
-    max-width: none;
-    margin-top: 48px;
-    text-align: center;
     font-size: 0.8rem;
   }
 }

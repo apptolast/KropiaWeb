@@ -1,9 +1,9 @@
-import { Leaf } from 'lucide-react'
+import kropiaLogo from '../../assets/kropia-logo.webp'
 
-export function Brand({ label = 'Kropia + AppToLast', onClick }) {
+export function Brand({ label = 'Kropia', onClick }) {
   return (
     <a className="brand" href="#inicio" aria-label="Kropia inicio" onClick={onClick}>
-      <Leaf aria-hidden="true" />
+      <img src={kropiaLogo} alt="" aria-hidden="true" />
       <span>{label}</span>
     </a>
   )

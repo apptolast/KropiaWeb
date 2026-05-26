@@ -6,8 +6,9 @@ export function TeamSection() {
   return (
     <section className="section team-section">
       <div className="container">
-        <SectionHeading title="El equipo de AppToLast" centered>
-          Detrás de Kropia hay personas comprometidas con la innovación en el campo.
+        <SectionHeading title="Liderazgo técnico de AppToLast" centered>
+          Un equipo senior, sin intermediarios ni gestores innecesarios, aplicado al desarrollo y
+          despliegue de Kropia.
         </SectionHeading>
 
         <div className="team-grid">

@@ -81,8 +81,12 @@
   }
 
   .hero-device {
+    width: min(100%, 660px);
     margin-inline: auto;
-    transform: rotate(0);
+
+    &__screens {
+      min-height: 492px;
+    }
   }
 
   .value-grid,
@@ -229,7 +233,19 @@
   }
 
   .hero-device {
-    width: min(calc(100vw - 48px), 340px);
+    width: min(calc(100vw - 28px), 420px);
+
+    &__screens {
+      min-height: 336px;
+    }
+
+    &__screen {
+      max-width: 154px;
+
+      &--primary {
+        max-width: 184px;
+      }
+    }
   }
 
   .sensor-panel {
@@ -314,12 +330,8 @@
   }
 
   .team-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: 24px;
-  }
-
-  .team-member img {
-    width: 132px;
   }
 
   .testimonial-card {

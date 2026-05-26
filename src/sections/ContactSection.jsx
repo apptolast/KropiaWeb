@@ -15,11 +15,11 @@ export function ContactSection() {
             sus datos y le llamaremos hoy mismo.
           </SectionHeading>
 
-          <a className="phone-card" href="tel:+34950000000">
+          <a className="phone-card" href="tel:+34645826688">
             <Phone aria-hidden="true" />
             <span>
               Atención telefónica
-              <strong>+34 950 00 00 00</strong>
+              <strong>+34 645 826 688</strong>
             </span>
           </a>
         </div>
