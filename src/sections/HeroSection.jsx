@@ -30,8 +30,8 @@ export function HeroSection() {
             Controla tu invernadero <span>desde el móvil</span>, estés donde estés
           </h1>
           <p>
-            Kropia te permite ver la temperatura, humedad y estado de tu invernadero en
-            tiempo real. Sin complicaciones.
+            Monitoriza sensores, sectores, alertas, riego y consignas desde una app
+            conectada en tiempo real al backend de tu invernadero.
           </p>
           <div className="hero-section__actions">
             <a className="button" href="#contacto">

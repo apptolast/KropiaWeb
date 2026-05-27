@@ -1,24 +1,23 @@
-import { testimonials } from '../data/siteContent'
+import { SectionHeading } from '../components/ui/SectionHeading'
+import { productPillars } from '../data/siteContent'
 
 export function TestimonialsSection() {
   return (
-    <section className="section testimonials-section">
+    <section className="section product-section">
       <div className="container">
-        <div className="testimonial-card">
-          <span className="quote-mark" aria-hidden="true">
-            "
-          </span>
-          <div className="testimonial-card__grid">
-            {testimonials.map((testimonial) => (
-              <figure key={testimonial.author}>
-                <blockquote>{testimonial.quote}</blockquote>
-                <figcaption>
-                  <strong>{testimonial.author}</strong>
-                  <span>{testimonial.role}</span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+        <SectionHeading title="La plataforma completa" centered>
+          La web ya no habla solo de una app: refleja las piezas reales que sostienen el
+          proyecto.
+        </SectionHeading>
+
+        <div className="product-grid">
+          {productPillars.map(({ icon: Icon, title, text }) => (
+            <article className="product-pillar" key={title}>
+              <Icon aria-hidden="true" />
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

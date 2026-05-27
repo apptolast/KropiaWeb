@@ -4,10 +4,11 @@ import { pricingPlans } from '../data/siteContent'
 
 export function PricingSection() {
   return (
-    <section className="section pricing-section" id="precios">
+    <section className="section pricing-section" id="implantacion">
       <div className="container">
-        <SectionHeading title="Planes adaptados a su medida" centered>
-          Elija la potencia de control que su explotación necesita.
+        <SectionHeading title="Implantación por fases" centered>
+          Cada invernadero parte de un estado distinto. Por eso planteamos el alcance
+          técnico antes de cerrar una propuesta.
         </SectionHeading>
 
         <div className="pricing-grid">

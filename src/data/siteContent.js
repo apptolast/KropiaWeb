@@ -1,12 +1,14 @@
 import {
   Activity,
   BellRing,
+  Database,
   Droplets,
-  Eye,
   Grid2X2,
-  RouteOff,
+  RadioTower,
+  Settings2,
   ShieldCheck,
   TrendingUp,
+  UsersRound,
   Zap,
 } from 'lucide-react'
 
@@ -18,31 +20,31 @@ import teamPabloImage from '../assets/team-pablo.jpg'
 export const navItems = [
   { label: 'Inicio', href: '#inicio' },
   { label: 'Funcionalidades', href: '#funcionalidades' },
-  { label: 'Precios', href: '#precios' },
+  { label: 'Implantación', href: '#implantacion' },
   { label: 'Contacto', href: '#contacto' },
 ]
 
 export const valueCards = [
   {
-    icon: Eye,
-    title: 'Vea su invernadero',
-    text: 'Vigilancia visual constante y precisa de sus cultivos desde cualquier lugar.',
+    icon: RadioTower,
+    title: 'Datos en tiempo real',
+    text: 'Lecturas vivas de sensores y actuadores por invernadero, sector y dispositivo.',
   },
   {
     icon: BellRing,
-    title: 'Le avisamos si algo va mal',
-    text: 'Alertas inteligentes inmediatas ante cualquier anomalía detectada por los sensores.',
+    title: 'Alertas operativas',
+    text: 'Avisos con severidad y estado de resolución para actuar antes de que el problema escale.',
     tone: 'warning',
   },
   {
     icon: Droplets,
-    title: 'Controle el riego y la ventilación',
-    text: 'Gestión total de los sistemas mecánicos sin necesidad de presencia física.',
+    title: 'Riego y consignas',
+    text: 'Configuración de horarios, sectores, tiempos de apertura y valores objetivo desde la app.',
   },
   {
-    icon: RouteOff,
-    title: 'Sin viajes innecesarios',
-    text: 'Ahorre tiempo y combustible gestionando su explotación de forma remota.',
+    icon: Database,
+    title: 'Histórico útil',
+    text: 'Datos agregados por dispositivo y periodo para entender tendencias y tomar mejores decisiones.',
     tone: 'earth',
   },
 ]
@@ -50,87 +52,91 @@ export const valueCards = [
 export const featureCards = [
   {
     icon: Activity,
-    title: 'Monitorización',
-    text: 'Visualización constante de parámetros críticos como temperatura de suelo, aire y niveles de CO2.',
+    title: 'Monitorización jerárquica',
+    text: 'Vista organizada por cliente, invernadero, sector, dispositivo, consigna y alerta, con valor actual y última actualización.',
     className: 'feature-card--wide',
     image: greenhouseImage,
   },
   {
     icon: Zap,
-    title: 'Control remoto',
-    text: 'Accione ventanas, bombas de agua y extractores pulsando un botón desde la aplicación móvil.',
+    title: 'Comandos remotos',
+    text: 'Envío de órdenes al PLC a través del backend, con persistencia del comando y publicación por MQTT.',
     className: 'feature-card--primary',
   },
   {
     icon: TrendingUp,
     title: 'Gráficos históricos',
-    text: 'Analice la evolución de sus cultivos con datos históricos detallados por días o semanas.',
+    text: 'Consulta de lecturas y estadísticas por código de dispositivo para periodos como 24 horas, días o semanas.',
   },
   {
     icon: Grid2X2,
-    title: 'Multi-invernadero',
-    text: 'Gestione múltiples explotaciones desde una única cuenta de usuario sin complicaciones.',
+    title: 'Multi-invernadero y sectores',
+    text: 'Gestión de varias instalaciones, sectores y dispositivos activos desde una misma cuenta o tenant.',
   },
   {
-    icon: ShieldCheck,
-    title: 'Conexión segura',
-    text: 'Sus datos están protegidos con encriptación de grado profesional y copias de seguridad.',
+    icon: UsersRound,
+    title: 'Panel de administración',
+    text: 'Alta y mantenimiento de clientes, usuarios, invernaderos, sectores, dispositivos, alertas y catálogos.',
   },
 ]
 
 export const processSteps = [
   {
-    title: 'Nos llama y le visitamos',
-    text: 'Analizamos las necesidades específicas de su finca y le proponemos la mejor configuración de sensores y actuadores.',
+    title: 'Modelamos la instalación',
+    text: 'Definimos la estructura real: cliente, invernaderos, sectores, dispositivos, consignas, usuarios y permisos.',
   },
   {
-    title: 'Instalamos todo',
-    text: 'Nuestro equipo técnico se desplaza para realizar la instalación completa del hardware en un solo día.',
+    title: 'Conectamos datos y control',
+    text: 'Integramos sensores, actuadores o PLC con el backend mediante MQTT, REST y canales WebSocket/STOMP.',
   },
   {
-    title: 'Le enseñamos a usarlo',
-    text: 'Configuramos la aplicación en su móvil y le damos una formación rápida para que sepa interpretar cada dato.',
+    title: 'Configuramos la app',
+    text: 'Activamos usuarios, alertas, riego, consignas y vistas para que cada responsable vea solo lo que necesita.',
   },
   {
-    title: 'Usted controla, nosotros mantenemos',
-    text: 'Disfrute de la tranquilidad. Nosotros nos encargamos de que el sistema esté siempre actualizado y funcionando.',
+    title: 'Medimos, ajustamos y evolucionamos',
+    text: 'El histórico y las alertas ayudan a detectar patrones, corregir umbrales y ampliar la instalación por fases.',
   },
 ]
 
 export const pricingPlans = [
   {
-    eyebrow: 'Esencial',
-    title: 'Pack Básico',
-    price: '1.800€',
-    monthly: '+ 49€/mes',
-    description: 'Ideal para explotaciones pequeñas.',
-    features: ['2 sensores temperatura', 'App móvil básica', 'Alertas por SMS'],
+    eyebrow: 'Fase 1',
+    title: 'Diagnóstico técnico',
+    price: 'A medida',
+    monthly: 'alcance inicial',
+    description: 'Para aterrizar el proyecto sobre una instalación real.',
+    features: [
+      'Mapa de invernaderos y sectores',
+      'Inventario de sensores y actuadores',
+      'Revisión de conectividad y datos disponibles',
+    ],
   },
   {
-    eyebrow: 'Profesional',
-    title: 'Pack Estándar',
-    price: '3.500€',
-    monthly: '+ 89€/mes',
-    description: 'Nuestra solución más demandada.',
+    eyebrow: 'Fase 2',
+    title: 'Implantación Kropia',
+    price: 'Proyecto',
+    monthly: 'backend + app',
+    description: 'Para conectar la operación diaria al ecosistema Kropia.',
     features: [
-      'Sensores completos',
-      'Control de riego remoto',
-      'Gráficos avanzados',
-      'Soporte prioritario',
+      'Backend IoT y datos en tiempo real',
+      'App móvil con alertas e histórico',
+      'Configuración de riego y consignas',
+      'Panel de administración',
     ],
     highlighted: true,
   },
   {
-    eyebrow: 'A medida',
-    title: 'Pack Profesional',
-    price: '7.000€',
-    monthly: '+ 149€/mes',
-    description: 'Control total multi-zona.',
+    eyebrow: 'Fase 3',
+    title: 'Evolución continua',
+    price: 'Continuo',
+    monthly: 'soporte y mejora',
+    description: 'Para ampliar funcionalidades y mantener el sistema operativo.',
     features: [
-      'Automatización total',
-      'Control de ventilación',
-      'Multi-usuario ilimitado',
-      'Integración ERP',
+      'Nuevos dispositivos y sectores',
+      'Ajuste de reglas y umbrales',
+      'Mejoras de app y administración',
+      'Acompañamiento técnico',
     ],
   },
 ]
@@ -173,35 +179,43 @@ export const teamMembers = [
   },
 ]
 
-export const testimonials = [
+export const productPillars = [
   {
-    quote:
-      'Desde que instalé Kropia, ya no tengo que ir al cortijo cada mañana solo para ver cómo están las ventanas. Ahora abro el móvil mientras desayuno y lo controlo todo.',
-    author: 'Antonio García',
-    role: 'Agricultor, Almería',
+    icon: Settings2,
+    title: 'App para operación diaria',
+    text: 'GreenhouseFronts centraliza el estado de invernaderos, sectores, sensores, consignas, alertas, riego y perfiles en una app Kotlin Multiplatform.',
   },
   {
-    quote:
-      'La tranquilidad de que la aplicación te avise si sube demasiado la temperatura no tiene precio. He salvado la cosecha de este año gracias a una alerta a tiempo.',
-    author: 'María Rodríguez',
-    role: 'Productora hortofrutícola',
+    icon: ShieldCheck,
+    title: 'Backend preparado para IoT',
+    text: 'InvernaderosAPI recibe datos por MQTT, guarda histórico en TimescaleDB, usa Redis para lecturas recientes y emite actualizaciones por WebSocket.',
+  },
+  {
+    icon: UsersRound,
+    title: 'Administración del sistema',
+    text: 'GreenhouseAdmin permite gestionar clientes, usuarios, invernaderos, sectores, dispositivos, alertas, ajustes y catálogos desde un portal web.',
   },
 ]
 
 export const faqs = [
   {
-    question: '¿Qué pasa si se va la luz en el invernadero?',
+    question: '¿Qué se puede monitorizar con Kropia?',
     answer:
-      'Los equipos pueden incluir batería de respaldo y una alerta crítica para avisarle del corte de energía en cuanto se detecte.',
+      'La app está preparada para mostrar dispositivos por sector con valor actual, unidad, categoría, tipo y última actualización: temperatura, humedad, batería, presión, radiación u otros sensores que se conecten al sistema.',
   },
   {
-    question: '¿Necesito tener Wi-Fi allí?',
+    question: '¿Cómo llegan los datos a la app?',
     answer:
-      'No tiene por qué. La instalación puede trabajar con conectividad móvil industrial para zonas rurales con cobertura limitada.',
+      'Los sensores o PLC publican datos hacia el backend mediante MQTT. La API los procesa, guarda histórico y envía actualizaciones en tiempo real a la app mediante WebSocket/STOMP, con consultas REST cuando hace falta.',
   },
   {
-    question: '¿Es difícil de usar la aplicación?',
+    question: '¿Se puede controlar el riego?',
     answer:
-      'No. La interfaz está pensada para revisar datos clave, recibir alertas y activar controles sin tecnicismos innecesarios.',
+      'Sí. El proyecto incluye configuración de riego por invernadero y sectores, con días activos, ventana horaria, esperas y tiempos de apertura por sector.',
+  },
+  {
+    question: '¿Kropia guarda histórico?',
+    answer:
+      'Sí. El backend usa una base de datos de series temporales para lecturas e históricos, lo que permite consultar estadísticas y gráficas por dispositivo y periodo.',
   },
 ]

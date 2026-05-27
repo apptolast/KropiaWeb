@@ -5,8 +5,9 @@ export function ProcessSection() {
   return (
     <section className="section process-section">
       <div className="container process-section__grid">
-        <SectionHeading title="Cómo funciona Kropia">
-          Un proceso sencillo pensado para que usted solo se preocupe de lo importante: su cosecha.
+        <SectionHeading title="Cómo se implanta Kropia">
+          Partimos de la instalación real y conectamos datos, control y administración por
+          fases.
         </SectionHeading>
 
         <div className="process-list">

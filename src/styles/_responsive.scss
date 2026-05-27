@@ -91,6 +91,7 @@
 
   .value-grid,
   .pricing-grid,
+  .product-grid,
   .team-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -260,6 +261,7 @@
   .value-grid,
   .feature-grid,
   .pricing-grid,
+  .product-grid,
   .team-grid,
   .testimonial-card__grid,
   .form-grid {
@@ -325,6 +327,11 @@
   }
 
   .price-card {
+    min-height: auto;
+    padding: 28px;
+  }
+
+  .product-pillar {
     min-height: auto;
     padding: 28px;
   }

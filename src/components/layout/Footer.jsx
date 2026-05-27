@@ -7,7 +7,7 @@ export function Footer() {
       <div className="container site-footer__grid">
         <div>
           <Brand label="Kropia" />
-          <p>Revolucionando el campo a través de tecnología inteligente y compromiso real.</p>
+          <p>Monitorización, control e histórico para invernaderos conectados.</p>
         </div>
         <div>
           <h2>Navegación</h2>
@@ -25,7 +25,7 @@ export function Footer() {
         </div>
         <div>
           <h2>Contacto</h2>
-          <a href="mailto:info@kropia.es">info@kropia.es</a>
+          <a href="mailto:admin@apptolast.com">admin@apptolast.com</a>
         </div>
       </div>
       <div className="container site-footer__bottom">

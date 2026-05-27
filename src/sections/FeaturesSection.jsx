@@ -6,8 +6,9 @@ export function FeaturesSection() {
   return (
     <section className="section features-section" id="funcionalidades">
       <div className="container">
-        <SectionHeading title="Todo lo que necesitas" centered>
-          Tecnología de última generación adaptada a la sencillez del campo.
+        <SectionHeading title="Qué resuelve Kropia" centered>
+          Una plataforma de app, backend y administración pensada para invernaderos
+          conectados.
         </SectionHeading>
 
         <div className="feature-grid">

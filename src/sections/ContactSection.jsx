@@ -1,4 +1,4 @@
-import { Phone, Send } from 'lucide-react'
+import { Send } from 'lucide-react'
 
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { useEmailJsForm } from '../hooks/useEmailJsForm'
@@ -11,10 +11,12 @@ export function ContactSection() {
       <div className="container contact-section__grid">
         <div className="contact-section__copy">
           <SectionHeading title="Hablemos de su proyecto">
-            Estamos listos para ayudarle a dar el salto a la agricultura digital. Déjenos
-            sus datos y le llamaremos hoy mismo.
+            Cuéntenos cuántos invernaderos, sectores y dispositivos quiere conectar.
+            Revisaremos el alcance y le responderemos por correo.
           </SectionHeading>
 
+          {/*
+          TODO: Reactivar cuando la línea telefónica esté operativa.
           <a className="phone-card" href="tel:+34645826688">
             <Phone aria-hidden="true" />
             <span>
@@ -22,6 +24,7 @@ export function ContactSection() {
               <strong>+34 645 826 688</strong>
             </span>
           </a>
+          */}
         </div>
 
         <form className="contact-form" ref={formRef} onSubmit={handleSubmit}>
