@@ -19,9 +19,8 @@ export function Footer() {
         </div>
         <div>
           <h2>Legal</h2>
-          <a href="#contacto">Privacidad</a>
-          <a href="#contacto">Aviso legal</a>
-          <a href="#contacto">Cookies</a>
+          <a href="/privacidad">Privacidad</a>
+          <a href="/aviso-legal">Aviso legal</a>
         </div>
         <div>
           <h2>Contacto</h2>

@@ -18,10 +18,10 @@ import teamJesusImage from '../assets/team-jesus.jpg'
 import teamPabloImage from '../assets/team-pablo.jpg'
 
 export const navItems = [
-  { label: 'Inicio', href: '#inicio' },
-  { label: 'Funcionalidades', href: '#funcionalidades' },
-  { label: 'Implantación', href: '#implantacion' },
-  { label: 'Contacto', href: '#contacto' },
+  { label: 'Inicio', href: '/#inicio' },
+  { label: 'Funcionalidades', href: '/#funcionalidades' },
+  { label: 'Implantación', href: '/#implantacion' },
+  { label: 'Contacto', href: '/#contacto' },
 ]
 
 export const valueCards = [

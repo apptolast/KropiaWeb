@@ -72,6 +72,10 @@ export function ContactSection() {
             Mensaje
             <textarea name="message" rows="5" placeholder="¿En qué podemos ayudarle?" />
           </label>
+          <p className="contact-form__legal">
+            Al enviar el formulario, trataremos sus datos para responder a su solicitud. Puede
+            consultar más información en la <a href="/privacidad">política de privacidad</a>.
+          </p>
           <input type="hidden" name="project_name" value="Kropia" />
           <button
             className="button contact-form__submit"

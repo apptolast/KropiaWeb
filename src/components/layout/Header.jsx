@@ -52,7 +52,7 @@ export function Header() {
             {item.label}
           </a>
         ))}
-        <a className="button button--small" href="#contacto" onClick={closeMenu}>
+        <a className="button button--small" href="/#contacto" onClick={closeMenu}>
           Solicitar información
         </a>
       </nav>

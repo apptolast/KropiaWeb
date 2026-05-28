@@ -353,6 +353,25 @@
     }
   }
 
+  .legal-page {
+    &__eyebrow {
+      margin-top: 34px;
+    }
+
+    &__intro {
+      font-size: 1rem;
+    }
+  }
+
+  .legal-block {
+    padding: 22px;
+
+    dl div {
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+  }
+
   .site-footer {
     text-align: center;
 
