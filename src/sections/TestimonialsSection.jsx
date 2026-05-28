@@ -1,17 +1,18 @@
 import { SectionHeading } from '../components/ui/SectionHeading'
-import { productPillars } from '../data/siteContent'
+import { useI18n } from '../i18n/i18nContext'
 
 export function TestimonialsSection() {
+  const { content } = useI18n()
+
   return (
     <section className="section product-section">
       <div className="container">
-        <SectionHeading title="La plataforma completa" centered>
-          La web ya no habla solo de una app: refleja las piezas reales que sostienen el
-          proyecto.
+        <SectionHeading title={content.platform.title} centered>
+          {content.platform.text}
         </SectionHeading>
 
         <div className="product-grid">
-          {productPillars.map(({ icon: Icon, title, text }) => (
+          {content.platform.pillars.map(({ icon: Icon, title, text }) => (
             <article className="product-pillar" key={title}>
               <Icon aria-hidden="true" />
               <h3>{title}</h3>

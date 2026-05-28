@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 
-import { navItems } from '../../data/siteContent'
+import { useI18n } from '../../i18n/i18nContext'
 import { Brand } from '../ui/Brand'
+import { LanguageSwitcher } from '../ui/LanguageSwitcher'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const { content, sectionPath } = useI18n()
 
   const closeMenu = () => setIsOpen(false)
 
@@ -34,7 +36,7 @@ export function Header() {
           isOpen ? 'site-header__toggle--open' : ''
         }`}
         type="button"
-        aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
+        aria-label={isOpen ? content.header.closeMenu : content.header.openMenu}
         aria-expanded={isOpen}
         aria-controls="site-navigation"
         onClick={() => setIsOpen((open) => !open)}
@@ -45,16 +47,17 @@ export function Header() {
       <nav
         className={`site-nav ${isOpen ? 'site-nav--open' : ''}`}
         id="site-navigation"
-        aria-label="Principal"
+        aria-label={content.header.navLabel}
       >
-        {navItems.map((item) => (
-          <a key={item.href} href={item.href} onClick={closeMenu}>
+        {content.navItems.map((item) => (
+          <a key={item.section} href={sectionPath(item.section)} onClick={closeMenu}>
             {item.label}
           </a>
         ))}
-        <a className="button button--small" href="/#contacto" onClick={closeMenu}>
-          Solicitar información
+        <a className="button button--small" href={sectionPath('contact')} onClick={closeMenu}>
+          {content.header.requestInfo}
         </a>
+        <LanguageSwitcher onSelect={closeMenu} />
       </nav>
     </header>
   )

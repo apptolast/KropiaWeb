@@ -2,17 +2,18 @@ import { useState } from 'react'
 
 import { FaqItem } from '../components/cards/FaqItem'
 import { SectionHeading } from '../components/ui/SectionHeading'
-import { faqs } from '../data/siteContent'
+import { useI18n } from '../i18n/i18nContext'
 
 export function FaqSection() {
   const [openIndex, setOpenIndex] = useState(0)
+  const { content, routeSectionIds } = useI18n()
 
   return (
-    <section className="section faq-section" aria-labelledby="faq-title">
+    <section className="section faq-section" aria-labelledby={routeSectionIds.faq}>
       <div className="container container--narrow">
-        <SectionHeading title="Preguntas frecuentes" id="faq-title" centered />
+        <SectionHeading title={content.faq.title} id={routeSectionIds.faq} centered />
         <div className="faq-list">
-          {faqs.map((faq, index) => {
+          {content.faq.items.map((faq, index) => {
             const isOpen = openIndex === index
 
             return (

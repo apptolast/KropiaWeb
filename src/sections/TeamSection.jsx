@@ -1,19 +1,20 @@
 import { TeamMemberCard } from '../components/cards/TeamMemberCard'
 import { SectionHeading } from '../components/ui/SectionHeading'
-import { teamMembers } from '../data/siteContent'
+import { useI18n } from '../i18n/i18nContext'
 
 export function TeamSection() {
+  const { content } = useI18n()
+
   return (
     <section className="section team-section">
       <div className="container">
-        <SectionHeading title="Liderazgo técnico de AppToLast" centered>
-          Un equipo senior, sin intermediarios ni gestores innecesarios, aplicado al desarrollo y
-          despliegue de Kropia.
+        <SectionHeading title={content.team.title} centered>
+          {content.team.text}
         </SectionHeading>
 
         <div className="team-grid">
-          {teamMembers.map((member) => (
-            <TeamMemberCard key={member.name} {...member} />
+          {content.team.members.map((member) => (
+            <TeamMemberCard key={member.name} labels={content.team} {...member} />
           ))}
         </div>
       </div>

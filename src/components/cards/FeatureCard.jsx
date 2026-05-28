@@ -1,4 +1,4 @@
-export function FeatureCard({ className = '', icon: Icon, image, text, title }) {
+export function FeatureCard({ className = '', icon: Icon, image, imageAlt, text, title }) {
   return (
     <article className={`feature-card ${className}`}>
       <div>
@@ -9,7 +9,7 @@ export function FeatureCard({ className = '', icon: Icon, image, text, title }) 
       {image && (
         <img
           src={image}
-          alt="Interior de un invernadero monitorizado"
+          alt={imageAlt}
           loading="lazy"
           decoding="async"
         />

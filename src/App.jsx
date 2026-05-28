@@ -1,6 +1,7 @@
 import { Footer } from './components/layout/Footer'
 import { Header } from './components/layout/Header'
-import { getLegalPageByPath } from './data/legalContent'
+import { I18nProvider } from './i18n/I18nProvider'
+import { useI18n } from './i18n/i18nContext'
 import { ContactSection } from './sections/ContactSection'
 import { FaqSection } from './sections/FaqSection'
 import { FeaturesSection } from './sections/FeaturesSection'
@@ -29,7 +30,15 @@ function HomePage() {
 }
 
 function App() {
-  const legalPage = getLegalPageByPath(window.location.pathname)
+  return (
+    <I18nProvider>
+      <AppRoutes />
+    </I18nProvider>
+  )
+}
+
+function AppRoutes() {
+  const { legalPage } = useI18n()
 
   return (
     <>

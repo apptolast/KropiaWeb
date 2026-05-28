@@ -1,19 +1,20 @@
 import { FeatureCard } from '../components/cards/FeatureCard'
 import { SectionHeading } from '../components/ui/SectionHeading'
-import { featureCards } from '../data/siteContent'
+import { useI18n } from '../i18n/i18nContext'
 
 export function FeaturesSection() {
+  const { content, routeSectionIds } = useI18n()
+
   return (
-    <section className="section features-section" id="funcionalidades">
+    <section className="section features-section" id={routeSectionIds.features}>
       <div className="container">
-        <SectionHeading title="Qué resuelve Kropia" centered>
-          Una plataforma de app, control y administración pensada para invernaderos
-          conectados.
+        <SectionHeading title={content.features.title} centered>
+          {content.features.text}
         </SectionHeading>
 
         <div className="feature-grid">
-          {featureCards.map((card) => (
-            <FeatureCard key={card.title} {...card} />
+          {content.features.cards.map((card) => (
+            <FeatureCard imageAlt={content.features.imageAlt} key={card.title} {...card} />
           ))}
         </div>
       </div>

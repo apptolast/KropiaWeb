@@ -4,7 +4,7 @@ import { emailConfig, hasEmailConfig } from '../config/email'
 
 const initialStatus = { type: 'idle', text: '' }
 
-export function useEmailJsForm() {
+export function useEmailJsForm(messages) {
   const formRef = useRef(null)
   const [status, setStatus] = useState(initialStatus)
   const [isSending, setIsSending] = useState(false)
@@ -16,7 +16,7 @@ export function useEmailJsForm() {
     if (!hasEmailConfig) {
       setStatus({
         type: 'info',
-        text: 'Formulario listo. Falta configurar las variables VITE_EMAILJS_* para activar el envío.',
+        text: messages.missingConfig,
       })
       return
     }
@@ -31,12 +31,12 @@ export function useEmailJsForm() {
       formRef.current?.reset()
       setStatus({
         type: 'success',
-        text: 'Solicitud enviada. Le contactaremos lo antes posible.',
+        text: messages.success,
       })
     } catch (error) {
       setStatus({
         type: 'error',
-        text: error?.text || 'No se ha podido enviar la solicitud. Intente de nuevo en unos minutos.',
+        text: error?.text || messages.error,
       })
     } finally {
       setIsSending(false)

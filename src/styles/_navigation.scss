@@ -115,7 +115,7 @@
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 22px;
   color: $on-surface-variant;
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 0.88rem;
@@ -132,6 +132,32 @@
   .button,
   .button:hover {
     color: #ffffff;
+  }
+}
+
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  border: 1px solid rgba($outline-variant, 0.64);
+  border-radius: 999px;
+  background: rgba($surface-white, 0.72);
+  padding: 3px;
+
+  a {
+    display: grid;
+    min-width: 34px;
+    min-height: 30px;
+    place-items: center;
+    border-radius: 999px;
+    color: $on-surface-variant;
+    font-size: 0.76rem;
+    font-weight: 900;
+
+    &[aria-current='true'] {
+      background: $primary;
+      color: #ffffff;
+    }
   }
 }
 

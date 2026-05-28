@@ -1,17 +1,16 @@
 import { SectionHeading } from '../components/ui/SectionHeading'
-import { processSteps } from '../data/siteContent'
+import { useI18n } from '../i18n/i18nContext'
 
 export function ProcessSection() {
+  const { content } = useI18n()
+
   return (
     <section className="section process-section">
       <div className="container process-section__grid">
-        <SectionHeading title="Cómo se implanta Kropia">
-          Partimos de la instalación real y conectamos datos, control y administración por
-          fases.
-        </SectionHeading>
+        <SectionHeading title={content.process.title}>{content.process.text}</SectionHeading>
 
         <div className="process-list">
-          {processSteps.map((step, index) => (
+          {content.process.steps.map((step, index) => (
             <article className="process-step" key={step.title}>
               <span>{String(index + 1).padStart(2, '0')}</span>
               <div>

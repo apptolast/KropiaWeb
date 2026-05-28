@@ -2,18 +2,18 @@ import { Send } from 'lucide-react'
 
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { useEmailJsForm } from '../hooks/useEmailJsForm'
+import { useI18n } from '../i18n/i18nContext'
 
 export function ContactSection() {
-  const { formRef, handleSubmit, isSending, status } = useEmailJsForm()
+  const { content, pathFor, routeSectionIds } = useI18n()
+  const form = content.contact.form
+  const { formRef, handleSubmit, isSending, status } = useEmailJsForm(form.status)
 
   return (
-    <section className="section contact-section" id="contacto">
+    <section className="section contact-section" id={routeSectionIds.contact}>
       <div className="container contact-section__grid">
         <div className="contact-section__copy">
-          <SectionHeading title="Hablemos de su proyecto">
-            Cuéntenos cuántos invernaderos, sectores y dispositivos quiere conectar.
-            Revisaremos el alcance y le responderemos por correo.
-          </SectionHeading>
+          <SectionHeading title={content.contact.title}>{content.contact.text}</SectionHeading>
 
           {/*
           TODO: Reactivar cuando la línea telefónica esté operativa.
@@ -30,51 +30,51 @@ export function ContactSection() {
         <form className="contact-form" ref={formRef} onSubmit={handleSubmit}>
           <div className="form-grid">
             <label>
-              Nombre
+              {form.name}
               <input
                 name="user_name"
                 type="text"
-                placeholder="Su nombre completo"
+                placeholder={form.namePlaceholder}
                 autoComplete="name"
                 required
               />
             </label>
             <label>
-              Teléfono
+              {form.phone}
               <input
                 name="user_phone"
                 type="tel"
-                placeholder="600 000 000"
+                placeholder={form.phonePlaceholder}
                 autoComplete="tel"
                 required
               />
             </label>
           </div>
           <label>
-            Email
+            {form.email}
             <input
               name="user_email"
               type="email"
-              placeholder="correo@ejemplo.com"
+              placeholder={form.emailPlaceholder}
               autoComplete="email"
               required
             />
           </label>
           <label>
-            Número de invernaderos
-            <select name="greenhouse_count" defaultValue="1-2 invernaderos">
-              <option>1-2 invernaderos</option>
-              <option>3-5 invernaderos</option>
-              <option>Más de 5 invernaderos</option>
+            {form.greenhouseCount}
+            <select name="greenhouse_count" defaultValue={form.greenhouseOptions[0]}>
+              {form.greenhouseOptions.map((option) => (
+                <option key={option}>{option}</option>
+              ))}
             </select>
           </label>
           <label>
-            Mensaje
-            <textarea name="message" rows="5" placeholder="¿En qué podemos ayudarle?" />
+            {form.message}
+            <textarea name="message" rows="5" placeholder={form.messagePlaceholder} />
           </label>
           <p className="contact-form__legal">
-            Al enviar el formulario, trataremos sus datos para responder a su solicitud. Puede
-            consultar más información en la <a href="/privacidad">política de privacidad</a>.
+            {form.legalPrefix} <a href={pathFor('privacy')}>{form.legalLink}</a>
+            {form.legalSuffix}
           </p>
           <input type="hidden" name="project_name" value="Kropia" />
           <button
@@ -84,7 +84,7 @@ export function ContactSection() {
             aria-busy={isSending}
           >
             <Send aria-hidden="true" />
-            {isSending ? 'Enviando...' : 'Enviar solicitud'}
+            {isSending ? form.sending : form.submit}
           </button>
           {status.text && (
             <p

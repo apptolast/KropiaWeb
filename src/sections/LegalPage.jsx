@@ -1,18 +1,17 @@
-import { useEffect } from 'react'
 import { ArrowLeft } from 'lucide-react'
 
+import { useI18n } from '../i18n/i18nContext'
+
 export function LegalPage({ page }) {
-  useEffect(() => {
-    document.title = `${page.title} | Kropia`
-  }, [page.title])
+  const { content, sectionPath } = useI18n()
 
   return (
     <main>
       <section className="section legal-page">
         <div className="container container--narrow">
-          <a className="legal-page__back" href="/#inicio">
+          <a className="legal-page__back" href={sectionPath('home')}>
             <ArrowLeft aria-hidden="true" />
-            Volver a Kropia
+            {content.legalPage.back}
           </a>
 
           <p className="legal-page__eyebrow">{page.eyebrow}</p>
