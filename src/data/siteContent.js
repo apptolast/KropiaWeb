@@ -60,18 +60,18 @@ export const featureCards = [
   {
     icon: Zap,
     title: 'Comandos remotos',
-    text: 'Envío de órdenes al PLC a través del backend, con persistencia del comando y publicación por MQTT.',
+    text: 'Envía órdenes de control a la instalación de forma remota, con trazabilidad y confirmación del estado.',
     className: 'feature-card--primary',
   },
   {
     icon: TrendingUp,
     title: 'Gráficos históricos',
-    text: 'Consulta de lecturas y estadísticas por código de dispositivo para periodos como 24 horas, días o semanas.',
+    text: 'Consulta lecturas y estadísticas por dispositivo para periodos como 24 horas, días o semanas.',
   },
   {
     icon: Grid2X2,
     title: 'Multi-invernadero y sectores',
-    text: 'Gestión de varias instalaciones, sectores y dispositivos activos desde una misma cuenta o tenant.',
+    text: 'Gestión de varias instalaciones, sectores y dispositivos activos desde una misma organización.',
   },
   {
     icon: UsersRound,
@@ -87,7 +87,7 @@ export const processSteps = [
   },
   {
     title: 'Conectamos datos y control',
-    text: 'Integramos sensores, actuadores o PLC con el backend mediante MQTT, REST y canales WebSocket/STOMP.',
+    text: 'Conectamos sensores, actuadores y automatismos existentes para que la información y las órdenes fluyan de forma segura.',
   },
   {
     title: 'Configuramos la app',
@@ -116,10 +116,10 @@ export const pricingPlans = [
     eyebrow: 'Fase 2',
     title: 'Implantación Kropia',
     price: 'Proyecto',
-    monthly: 'backend + app',
+    monthly: 'puesta en marcha',
     description: 'Para conectar la operación diaria al ecosistema Kropia.',
     features: [
-      'Backend IoT y datos en tiempo real',
+      'Datos conectados en tiempo real',
       'App móvil con alertas e histórico',
       'Configuración de riego y consignas',
       'Panel de administración',
@@ -145,9 +145,9 @@ export const teamMembers = [
   {
     name: 'Alberto Hidalgo',
     role: 'Co-Founder & Lead Mobile Architect',
-    bio: 'Arquitecto visual y especialista en KMP. Crea interfaces nativas unificadas con una sola base de código para reducir fricción entre plataformas.',
+    bio: 'Arquitecto visual especializado en experiencias móviles. Crea interfaces claras y consistentes para reducir fricción entre plataformas.',
     superpower: 'Convergencia Multiplataforma',
-    stack: ['Kotlin', 'KMP', 'Compose', 'Swift'],
+    stack: ['Producto móvil', 'UX', 'Plataformas', 'Calidad'],
     image: teamAlbertoImage,
     social: {
       linkedin: 'https://www.linkedin.com/in/alberto-h-93431a42/',
@@ -159,7 +159,7 @@ export const teamMembers = [
     role: 'Co-Founder & Head of Infrastructure',
     bio: 'Ingeniero de infraestructura privada. Diseña servicios rápidos, escalables y resistentes para que las plataformas funcionen sin intermediarios.',
     superpower: 'Infraestructura Resiliente',
-    stack: ['CI/CD', 'Java', 'Python', 'Cloud Sec'],
+    stack: ['Infraestructura', 'Servicios', 'Seguridad', 'Operación'],
     image: teamPabloImage,
     social: {
       linkedin: 'https://www.linkedin.com/in/pablo-hurtado-gonzalo-9a5478237/',
@@ -171,7 +171,7 @@ export const teamMembers = [
     role: 'Business Strategy & Automation Lead',
     bio: 'Estratega y experto en sistemas industriales. Convierte necesidades de negocio complejas en automatizaciones útiles para operaciones reales.',
     superpower: 'Automatización Estratégica',
-    stack: ['Industrial IoT', 'AI Strategy', 'Business'],
+    stack: ['Automatización', 'Estrategia', 'Procesos', 'Negocio'],
     image: teamJesusImage,
     social: {
       linkedin: 'https://www.linkedin.com/in/jesus-hidalgo-garcia/',
@@ -183,17 +183,17 @@ export const productPillars = [
   {
     icon: Settings2,
     title: 'App para operación diaria',
-    text: 'GreenhouseFronts centraliza el estado de invernaderos, sectores, sensores, consignas, alertas, riego y perfiles en una app Kotlin Multiplatform.',
+    text: 'La app centraliza el estado de invernaderos, sectores, sensores, consignas, alertas, riego y perfiles en una experiencia sencilla para el equipo.',
   },
   {
     icon: ShieldCheck,
-    title: 'Backend preparado para IoT',
-    text: 'InvernaderosAPI recibe datos por MQTT, guarda histórico en TimescaleDB, usa Redis para lecturas recientes y emite actualizaciones por WebSocket.',
+    title: 'Sistema preparado para datos conectados',
+    text: 'Kropia recibe la información de la instalación, conserva el histórico y mantiene la app actualizada con los datos más recientes.',
   },
   {
     icon: UsersRound,
     title: 'Administración del sistema',
-    text: 'GreenhouseAdmin permite gestionar clientes, usuarios, invernaderos, sectores, dispositivos, alertas, ajustes y catálogos desde un portal web.',
+    text: 'El portal de administración permite gestionar clientes, usuarios, invernaderos, sectores, dispositivos, alertas, ajustes y catálogos.',
   },
 ]
 
@@ -206,7 +206,7 @@ export const faqs = [
   {
     question: '¿Cómo llegan los datos a la app?',
     answer:
-      'Los sensores o PLC publican datos hacia el backend mediante MQTT. La API los procesa, guarda histórico y envía actualizaciones en tiempo real a la app mediante WebSocket/STOMP, con consultas REST cuando hace falta.',
+      'Los sensores y automatismos de la instalación envían información al sistema Kropia. La plataforma la procesa, conserva el histórico y actualiza la app para que el equipo vea el estado más reciente.',
   },
   {
     question: '¿Se puede controlar el riego?',
@@ -216,6 +216,6 @@ export const faqs = [
   {
     question: '¿Kropia guarda histórico?',
     answer:
-      'Sí. El backend usa una base de datos de series temporales para lecturas e históricos, lo que permite consultar estadísticas y gráficas por dispositivo y periodo.',
+      'Sí. Kropia conserva lecturas e históricos para consultar estadísticas y gráficas por dispositivo y periodo.',
   },
 ]

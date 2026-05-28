@@ -31,7 +31,7 @@ export function HeroSection() {
           </h1>
           <p>
             Monitoriza sensores, sectores, alertas, riego y consignas desde una app
-            conectada en tiempo real al backend de tu invernadero.
+            conectada en tiempo real con tu instalación.
           </p>
           <div className="hero-section__actions">
             <a className="button" href="#contacto">
