@@ -15,7 +15,7 @@ import { ValueSection } from './sections/ValueSection'
 
 function HomePage() {
   return (
-    <main>
+    <main id="main-content" tabIndex="-1">
       <HeroSection />
       <ValueSection />
       <FeaturesSection />

@@ -6,7 +6,7 @@ export function LegalPage({ page }) {
   const { content, sectionPath } = useI18n()
 
   return (
-    <main>
+    <main id="main-content" tabIndex="-1">
       <section className="section legal-page">
         <div className="container container--narrow">
           <a className="legal-page__back" href={sectionPath('home')}>

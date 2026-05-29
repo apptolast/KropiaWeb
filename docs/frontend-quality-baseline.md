@@ -26,6 +26,7 @@ Estado inicial del trabajo diario para elevar KropiaWeb a un estandar frontend s
 - El menu movil se puede cerrar con Escape.
 - FAQ enlaza botones y paneles con `aria-controls`, `aria-labelledby` y `hidden`.
 - El formulario anuncia estados con `role=status/alert`, `aria-live`, `aria-busy` y autocompletado en campos de contacto.
+- El header incluye un enlace de salto al contenido principal para evitar repetir navegacion en teclado y lectores de pantalla.
 
 ## Backlog tecnico
 

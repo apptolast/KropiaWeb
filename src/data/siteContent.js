@@ -54,6 +54,7 @@ export const siteContent = {
       closeMenu: 'Cerrar menú',
       requestInfo: 'Solicitar información',
       languageLabel: 'Idioma',
+      skipToContent: 'Saltar al contenido',
     },
     hero: {
       titlePrefix: 'Controla tu invernadero',
@@ -360,6 +361,7 @@ export const siteContent = {
       closeMenu: 'Close menu',
       requestInfo: 'Request information',
       languageLabel: 'Language',
+      skipToContent: 'Skip to content',
     },
     hero: {
       titlePrefix: 'Control your greenhouse',
