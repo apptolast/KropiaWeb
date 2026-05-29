@@ -29,6 +29,9 @@ export function Header() {
 
   return (
     <header className="site-header">
+      <a className="skip-link" href="#main-content">
+        {content.header.skipToContent}
+      </a>
       <Brand onClick={closeMenu} />
 
       <button
