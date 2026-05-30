@@ -11,7 +11,7 @@ export function Brand({ label = 'Kropia', onClick }) {
       aria-label={`Kropia ${content.navItems[0].label}`}
       onClick={onClick}
     >
-      <img src={kropiaLogo} alt="" aria-hidden="true" />
+      <img src={kropiaLogo} alt="" width="432" height="432" aria-hidden="true" />
       <span>{label}</span>
     </a>
   )

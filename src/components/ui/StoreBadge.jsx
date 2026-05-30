@@ -14,7 +14,7 @@ export function StoreBadge() {
       aria-label={storeBadge.ariaLabel}
     >
       {locale === 'es' ? (
-        <img src={googlePlayBadge} alt={storeBadge.alt} />
+        <img src={googlePlayBadge} alt={storeBadge.alt} width="2000" height="593" />
       ) : (
         <span>{storeBadge.fallbackLabel}</span>
       )}
