@@ -26,7 +26,14 @@ export function HeroSection() {
           <div className="hero-device__screens">
             {hero.screens.map((screen) => (
               <figure className={`hero-device__screen ${screen.className}`} key={screen.alt}>
-                <img src={screen.src} alt={screen.alt} decoding="async" fetchPriority="high" />
+                <img
+                  src={screen.src}
+                  alt={screen.alt}
+                  width={screen.imageWidth}
+                  height={screen.imageHeight}
+                  decoding="async"
+                  fetchPriority="high"
+                />
               </figure>
             ))}
           </div>

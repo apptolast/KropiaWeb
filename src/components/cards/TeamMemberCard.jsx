@@ -6,6 +6,8 @@ function formatLabel(template, name) {
 
 export function TeamMemberCard({
   image,
+  imageHeight,
+  imageWidth,
   name,
   role,
   bio,
@@ -16,7 +18,14 @@ export function TeamMemberCard({
 }) {
   return (
     <article className="team-member">
-      <img src={image} alt={formatLabel(labels.portraitAlt, name)} loading="lazy" decoding="async" />
+      <img
+        src={image}
+        alt={formatLabel(labels.portraitAlt, name)}
+        width={imageWidth}
+        height={imageHeight}
+        loading="lazy"
+        decoding="async"
+      />
       <div className="team-member__body">
         <div className="team-member__header">
           <div>
