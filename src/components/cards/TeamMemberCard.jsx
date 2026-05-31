@@ -8,6 +8,7 @@ export function TeamMemberCard({
   image,
   imageHeight,
   imageWidth,
+  imagePosition,
   name,
   role,
   bio,
@@ -25,6 +26,7 @@ export function TeamMemberCard({
         height={imageHeight}
         loading="lazy"
         decoding="async"
+        style={imagePosition ? { objectPosition: imagePosition } : undefined}
       />
       <div className="team-member__body">
         <div className="team-member__header">

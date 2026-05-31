@@ -20,11 +20,20 @@
 
   p,
   a {
-    display: block;
     max-width: 280px;
     color: $on-surface-variant;
     font-size: 0.9rem;
     line-height: 1.65;
+  }
+
+  p {
+    display: block;
+  }
+
+  a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
   }
 
   a + a {

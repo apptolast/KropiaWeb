@@ -254,6 +254,7 @@ export const siteContent = {
           image: teamPabloImage,
           imageWidth: 800,
           imageHeight: 800,
+          imagePosition: '50% 42%',
           social: sharedTeamSocial.pablo,
         },
         {
@@ -265,6 +266,7 @@ export const siteContent = {
           image: teamJesusImage,
           imageWidth: 462,
           imageHeight: 462,
+          imagePosition: '50% 38%',
           social: sharedTeamSocial.jesus,
         },
       ],
@@ -323,6 +325,7 @@ export const siteContent = {
         namePlaceholder: 'Su nombre completo',
         phone: 'Teléfono',
         phonePlaceholder: '600 000 000',
+        website: 'Sitio web',
         email: 'Email',
         emailPlaceholder: 'correo@ejemplo.com',
         greenhouseCount: 'Número de invernaderos',
@@ -379,9 +382,9 @@ export const siteContent = {
     },
     hero: {
       titlePrefix: 'Control your greenhouse',
-      titleHighlight: 'from your mobile',
+      titleHighlight: 'from your phone',
       titleSuffix: ', wherever you are',
-      text: 'Monitor sensors, zones, alerts, irrigation and setpoints from an app connected in real time with your installation.',
+      text: 'Monitor sensors, zones, alerts, irrigation and setpoints from an app connected to your greenhouse in real time.',
       cta: 'Request information',
       screensLabel: 'Real screenshots of the Kropia app',
       screens: [
@@ -434,15 +437,15 @@ export const siteContent = {
         },
         {
           icon: Database,
-          title: 'Useful history',
+          title: 'Actionable history',
           text: 'Aggregated data by device and period to understand trends and make better decisions.',
           tone: 'earth',
         },
       ],
     },
     features: {
-      title: 'What Kropia solves',
-      text: 'An app, control and administration platform designed for connected greenhouses.',
+      title: 'Problems Kropia helps solve',
+      text: 'An app, control and administration platform built for connected greenhouses.',
       imageAlt: 'Interior of a monitored greenhouse',
       cards: [
         {
@@ -548,7 +551,7 @@ export const siteContent = {
     },
     team: {
       title: 'Technical leadership from AppToLast',
-      text: 'A senior team, with no unnecessary intermediaries or managers, focused on the development and deployment of Kropia.',
+      text: 'A senior team working directly with you, focused on the development and deployment of Kropia.',
       portraitAlt: 'Portrait of {name}',
       focusLabel: 'Specialty',
       stackLabel: 'Technical profile for {name}',
@@ -575,6 +578,7 @@ export const siteContent = {
           image: teamPabloImage,
           imageWidth: 800,
           imageHeight: 800,
+          imagePosition: '50% 42%',
           social: sharedTeamSocial.pablo,
         },
         {
@@ -586,6 +590,7 @@ export const siteContent = {
           image: teamJesusImage,
           imageWidth: 462,
           imageHeight: 462,
+          imagePosition: '50% 38%',
           social: sharedTeamSocial.jesus,
         },
       ],
@@ -644,6 +649,7 @@ export const siteContent = {
         namePlaceholder: 'Your full name',
         phone: 'Phone',
         phonePlaceholder: '+44 7000 000000',
+        website: 'Website',
         email: 'Email',
         emailPlaceholder: 'name@example.com',
         greenhouseCount: 'Number of greenhouses',
