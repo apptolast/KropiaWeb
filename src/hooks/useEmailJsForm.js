@@ -13,6 +13,22 @@ export function useEmailJsForm(messages) {
     event.preventDefault()
     setStatus(initialStatus)
 
+    const currentForm = formRef.current
+
+    if (!currentForm?.checkValidity()) {
+      currentForm?.reportValidity()
+      return
+    }
+
+    if (new FormData(currentForm).get('website')) {
+      currentForm.reset()
+      setStatus({
+        type: 'success',
+        text: messages.success,
+      })
+      return
+    }
+
     if (!hasEmailConfig) {
       setStatus({
         type: 'info',

@@ -128,8 +128,13 @@
 
   &__grid {
     display: grid;
-    grid-template-columns: 1fr 1.08fr;
-    gap: clamp(48px, 9vw, 112px);
-    align-items: center;
+    grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+    gap: clamp(40px, 7vw, 88px);
+    align-items: start;
+  }
+
+  &__copy {
+    max-width: 560px;
+    padding-top: clamp(8px, 2vw, 24px);
   }
 }
