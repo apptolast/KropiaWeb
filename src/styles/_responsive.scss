@@ -90,7 +90,7 @@
     margin-inline: auto;
 
     &__screens {
-      min-height: 492px;
+      min-height: clamp(560px, 92vw, 720px);
     }
   }
 
@@ -208,24 +208,30 @@
   }
 
   .hero-section {
-    padding-top: 46px;
+    padding-top: 42px;
+
+    &__grid {
+      gap: 22px;
+    }
 
     &__copy h1 {
-      max-width: 350px;
+      max-width: min(100%, 370px);
       margin-inline: auto;
-      font-size: clamp(2.15rem, 10vw, 2.75rem);
-      line-height: 1.06;
+      font-size: clamp(1.95rem, 8.6vw, 2.4rem);
+      line-height: 1.08;
+      text-wrap: balance;
     }
 
     &__copy p {
       max-width: 330px;
-      font-size: 1.02rem;
+      margin-top: 20px;
+      font-size: 1rem;
     }
   }
 
   .hero-section__actions {
     width: min(calc(100vw - 64px), 312px);
-    margin-inline: auto;
+    margin: 26px auto 28px;
   }
 
   .hero-section__actions .button,
@@ -242,14 +248,27 @@
     width: min(calc(100vw - 28px), 420px);
 
     &__screens {
-      min-height: 336px;
+      min-height: clamp(356px, 98vw, 400px);
     }
 
     &__screen {
-      max-width: 154px;
+      bottom: 30px;
+      width: 30%;
+      max-width: 116px;
+
+      &--left {
+        left: 14%;
+        transform: translateY(22px) rotate(-4deg);
+      }
 
       &--primary {
-        max-width: 184px;
+        width: 42%;
+        max-width: 158px;
+      }
+
+      &--right {
+        right: 14%;
+        transform: translateY(22px) rotate(4deg);
       }
     }
   }
