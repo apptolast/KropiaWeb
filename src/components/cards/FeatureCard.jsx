@@ -21,8 +21,9 @@ export function FeatureCard({
           alt={imageAlt}
           width={imageWidth}
           height={imageHeight}
-          loading="lazy"
+          loading="eager"
           decoding="async"
+          fetchPriority="low"
         />
       )}
     </article>
