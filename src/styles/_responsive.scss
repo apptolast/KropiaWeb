@@ -380,6 +380,10 @@
   .site-footer {
     text-align: center;
 
+    &__grid > div {
+      align-items: center;
+    }
+
     p,
     a {
       margin-inline: auto;
