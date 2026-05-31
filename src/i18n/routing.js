@@ -59,10 +59,10 @@ export function getRouteInfo(pathname) {
   }
 
   if (normalizedPath === '/en' || normalizedPath.startsWith('/en/')) {
-    return { locale: 'en', page: 'home' }
+    return { locale: 'en', page: 'notFound' }
   }
 
-  return { locale: defaultLocale, page: 'home' }
+  return { locale: defaultLocale, page: 'notFound' }
 }
 
 export function buildPath(locale, page = 'home', hash) {

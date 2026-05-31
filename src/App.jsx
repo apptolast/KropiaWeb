@@ -7,6 +7,7 @@ import { FaqSection } from './sections/FaqSection'
 import { FeaturesSection } from './sections/FeaturesSection'
 import { HeroSection } from './sections/HeroSection'
 import { LegalPage } from './sections/LegalPage'
+import { NotFoundPage } from './sections/NotFoundPage'
 import { PricingSection } from './sections/PricingSection'
 import { ProcessSection } from './sections/ProcessSection'
 import { TeamSection } from './sections/TeamSection'
@@ -38,12 +39,18 @@ function App() {
 }
 
 function AppRoutes() {
-  const { legalPage } = useI18n()
+  const { legalPage, routeInfo } = useI18n()
+
+  const page = routeInfo.page === 'notFound'
+    ? <NotFoundPage />
+    : legalPage
+      ? <LegalPage page={legalPage} />
+      : <HomePage />
 
   return (
     <>
       <Header />
-      {legalPage ? <LegalPage page={legalPage} /> : <HomePage />}
+      {page}
       <Footer />
     </>
   )

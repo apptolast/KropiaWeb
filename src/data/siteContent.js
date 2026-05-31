@@ -355,6 +355,12 @@ export const siteContent = {
     legalPage: {
       back: 'Volver a Kropia',
     },
+    notFound: {
+      eyebrow: 'Error 404',
+      title: 'Página no encontrada',
+      text: 'La dirección que ha abierto no existe o ya no está disponible.',
+      cta: 'Volver al inicio',
+    },
   },
   en: {
     metadata: {
@@ -675,6 +681,12 @@ export const siteContent = {
     },
     legalPage: {
       back: 'Back to Kropia',
+    },
+    notFound: {
+      eyebrow: 'Error 404',
+      title: 'Page not found',
+      text: 'The address you opened does not exist or is no longer available.',
+      cta: 'Back to home',
     },
   },
 }

@@ -11,6 +11,7 @@ export function I18nProvider({ children }) {
   const locale = routeInfo.locale
   const content = siteContent[locale]
   const legalPage = legalPages[locale][routeInfo.page] ?? null
+  const notFoundPage = routeInfo.page === 'notFound'
 
   const metadata = useMemo(
     () =>
@@ -21,11 +22,18 @@ export function I18nProvider({ children }) {
             ogLocale: content.metadata.ogLocale,
             title: `${legalPage.title} | Kropia`,
           }
-        : {
-            ...content.metadata,
-            locale,
-          },
-    [content.metadata, legalPage, locale],
+        : notFoundPage
+          ? {
+              description: content.notFound.text,
+              locale,
+              ogLocale: content.metadata.ogLocale,
+              title: content.notFound.title + ' | Kropia',
+            }
+          : {
+              ...content.metadata,
+              locale,
+            },
+    [content.metadata, content.notFound, legalPage, locale, notFoundPage],
   )
 
   useEffect(() => {
