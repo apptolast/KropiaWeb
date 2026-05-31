@@ -24,8 +24,9 @@ export function TeamMemberCard({
         alt={formatLabel(labels.portraitAlt, name)}
         width={imageWidth}
         height={imageHeight}
-        loading="lazy"
+        loading="eager"
         decoding="async"
+        fetchPriority="low"
         style={imagePosition ? { objectPosition: imagePosition } : undefined}
       />
       <div className="team-member__body">

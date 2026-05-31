@@ -16,6 +16,69 @@
   }
 }
 
+@media (max-width: 1120px) {
+  .value-grid,
+  .pricing-grid,
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .feature-card--wide {
+    grid-column: span 2;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    max-width: 900px;
+    margin-inline: auto;
+  }
+
+  .team-member {
+    display: grid;
+    grid-template-columns: minmax(128px, 176px) minmax(0, 1fr);
+    align-items: center;
+    gap: 24px;
+  }
+
+  .team-member img {
+    width: min(100%, 156px);
+  }
+
+  .team-member__body {
+    align-items: flex-start;
+    padding-top: 0;
+    text-align: left;
+  }
+
+  .team-member__header,
+  .team-member__social,
+  .team-member__stack {
+    justify-content: flex-start;
+  }
+
+  .team-member__focus {
+    margin-top: 16px;
+  }
+
+  .contact-section__grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contact-section__copy {
+    max-width: 680px;
+    padding-top: 0;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 980px) {
   .section {
     padding: 76px 0;
@@ -96,8 +159,7 @@
 
   .value-grid,
   .pricing-grid,
-  .product-grid,
-  .team-grid {
+  .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -198,6 +260,11 @@
     h2 {
       font-size: 2rem;
     }
+  }
+
+  .brand img {
+    margin-left: 0;
+    transform: scale(1.35);
   }
 
   .brand span {
@@ -363,6 +430,50 @@
   .team-grid {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+
+  .team-member {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 20px;
+  }
+
+  .team-member img {
+    width: 112px;
+  }
+
+  .team-member__body {
+    align-items: center;
+    padding-top: 14px;
+    text-align: center;
+  }
+
+  .team-member__header,
+  .team-member__social,
+  .team-member__stack {
+    justify-content: center;
+  }
+
+  .team-member__bio {
+    margin-top: 14px;
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .team-member__focus {
+    margin-top: 16px;
+    padding-top: 14px;
+    text-align: center;
+  }
+
+  .team-member__stack {
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  .team-member__stack span {
+    padding: 6px 8px;
   }
 
   .testimonial-card {
