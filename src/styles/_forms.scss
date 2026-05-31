@@ -81,6 +81,16 @@
     margin-top: 4px;
   }
 
+  &__honeypot {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
   &__legal {
     color: $on-surface-variant;
     font-size: 0.78rem;

@@ -27,7 +27,17 @@ export function ContactSection() {
           */}
         </div>
 
-        <form className="contact-form" ref={formRef} onSubmit={handleSubmit}>
+        <form className="contact-form" ref={formRef} onSubmit={handleSubmit} noValidate>
+          <label className="contact-form__honeypot" aria-hidden="true">
+            {form.website}
+            <input
+              name="website"
+              type="text"
+              tabIndex="-1"
+              autoComplete="off"
+              inputMode="none"
+            />
+          </label>
           <div className="form-grid">
             <label>
               {form.name}

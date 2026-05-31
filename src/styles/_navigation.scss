@@ -122,6 +122,10 @@
   font-weight: 700;
 
   a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    padding-inline: 4px;
     transition: color 160ms ease;
 
     &:hover {
@@ -146,8 +150,8 @@
 
   a {
     display: grid;
-    min-width: 34px;
-    min-height: 30px;
+    min-width: 44px;
+    min-height: 38px;
     place-items: center;
     border-radius: 999px;
     color: $on-surface-variant;
