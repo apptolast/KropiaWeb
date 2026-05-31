@@ -97,6 +97,9 @@
     line-height: 1.55;
 
     a {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
       color: $primary;
       font-weight: 700;
       text-decoration: underline;
