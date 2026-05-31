@@ -149,18 +149,18 @@
   }
 
   .hero-device {
-    width: min(100%, 560px);
+    width: min(100%, 520px);
     margin-inline: auto;
 
     &__screens {
-      min-height: clamp(440px, 72vw, 580px);
+      min-height: clamp(360px, 58vw, 500px);
     }
 
     &__screen {
-      max-width: 224px;
+      max-width: 190px;
 
       &--primary {
-        max-width: 274px;
+        max-width: 232px;
       }
     }
   }
