@@ -313,7 +313,7 @@
   }
 
   .hero-section__actions {
-    width: min(calc(100vw - 48px), 300px);
+    width: min(100%, 300px);
     margin: 22px auto 20px;
   }
 
@@ -328,7 +328,7 @@
   }
 
   .hero-device {
-    width: min(calc(100vw - 28px), 420px);
+    width: min(100%, 420px);
 
     &__screens {
       min-height: clamp(300px, 88vw, 372px);
