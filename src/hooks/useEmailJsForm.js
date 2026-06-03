@@ -6,11 +6,17 @@ const initialStatus = { type: 'idle', text: '' }
 
 export function useEmailJsForm(messages) {
   const formRef = useRef(null)
+  const isSendingRef = useRef(false)
   const [status, setStatus] = useState(initialStatus)
   const [isSending, setIsSending] = useState(false)
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+
+    if (isSendingRef.current) {
+      return
+    }
+
     setStatus(initialStatus)
 
     const currentForm = formRef.current
@@ -38,6 +44,7 @@ export function useEmailJsForm(messages) {
     }
 
     try {
+      isSendingRef.current = true
       setIsSending(true)
       const { default: emailjs } = await import('@emailjs/browser')
 
@@ -55,6 +62,7 @@ export function useEmailJsForm(messages) {
         text: error?.text || messages.error,
       })
     } finally {
+      isSendingRef.current = false
       setIsSending(false)
     }
   }
