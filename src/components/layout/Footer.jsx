@@ -26,7 +26,7 @@ export function Footer() {
         </div>
         <div>
           <h2>{content.footer.contact}</h2>
-          <a href="mailto:admin@apptolast.com">admin@apptolast.com</a>
+          <a href={pathFor('support')}>{content.footer.support}</a>
         </div>
       </div>
       <div className="container site-footer__bottom">

@@ -16,11 +16,13 @@ export const routePaths = {
     home: '/',
     privacy: '/privacidad',
     legalNotice: '/aviso-legal',
+    support: '/soporte',
   },
   en: {
     home: '/en',
     privacy: '/en/privacy',
     legalNotice: '/en/legal-notice',
+    support: '/en/support',
   },
 }
 
@@ -82,7 +84,7 @@ export function getSectionKeyFromHash(locale, hash) {
 }
 
 export function getAlternatePath(routeInfo, nextLocale, hash = '') {
-  if (routeInfo.page === 'privacy' || routeInfo.page === 'legalNotice') {
+  if (routeInfo.page === 'privacy' || routeInfo.page === 'legalNotice' || routeInfo.page === 'support') {
     return buildPath(nextLocale, routeInfo.page)
   }
 

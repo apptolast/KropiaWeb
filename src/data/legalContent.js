@@ -158,6 +158,50 @@ export const legalPages = {
         },
       ],
     },
+    support: {
+      title: 'Soporte de Kropia',
+      eyebrow: 'Soporte',
+      updatedAt: 'Última actualización: 4 de junio de 2026',
+      intro:
+        'Esta página reúne la información de ayuda para usuarios de la app Kropia y para equipos que necesitan asistencia con su cuenta, instalación o uso diario.',
+      sections: [
+        {
+          title: 'Información de contacto',
+          details: [
+            ['Equipo de soporte', 'Kropia by AppToLast'],
+            ['Email', 'admin@apptolast.com'],
+            ['Formulario de contacto', 'https://kropia.apptolast.com/#contacto'],
+            ['Sitio web', 'https://kropia.apptolast.com'],
+          ],
+          paragraphs: [
+            'Puede escribirnos para comunicar incidencias, hacer preguntas sobre la app, solicitar ayuda con el acceso o enviar sugerencias de mejora.',
+          ],
+        },
+        {
+          title: 'Qué soporte cubrimos',
+          bullets: [
+            'Acceso a la cuenta, inicio de sesión y recuperación de credenciales.',
+            'Visualización de invernaderos, sectores, sensores, consignas, actuadores y alertas.',
+            'Notificaciones, histórico de datos y seguimiento de estados críticos.',
+            'Dudas operativas de equipos que ya tienen una instalación Kropia activa.',
+            'Sugerencias, comentarios generales y solicitudes de mejora.',
+          ],
+        },
+        {
+          title: 'Cuentas y modelo de acceso',
+          paragraphs: [
+            'Kropia es una app de apoyo para instalaciones de invernadero conectadas. Las cuentas se facilitan a usuarios autorizados por la organización o explotación que utiliza el sistema.',
+            'La app no vende contenido digital, suscripciones ni funciones mediante pagos dentro de la aplicación. Si una organización contrata servicios de implantación, soporte o evolución de Kropia, esa relación se gestiona fuera de la app mediante un acuerdo comercial directo con AppToLast.',
+          ],
+        },
+        {
+          title: 'Tiempo de respuesta',
+          paragraphs: [
+            'Revisamos las solicitudes recibidas por email o formulario y respondemos lo antes posible. Para incidencias operativas, incluya el correo de su cuenta, la organización o instalación afectada, el dispositivo utilizado y una descripción clara del problema.',
+          ],
+        },
+      ],
+    },
   },
   en: {
     privacy: {
@@ -314,6 +358,50 @@ export const legalPages = {
           title: 'Updates',
           paragraphs: [
             'Kropia may update this legal notice where necessary to adapt it to legal, technical or business changes. The version in force will always be the one published on this page.',
+          ],
+        },
+      ],
+    },
+    support: {
+      title: 'Kropia support',
+      eyebrow: 'Support',
+      updatedAt: 'Last updated: 4 June 2026',
+      intro:
+        'This page provides support information for Kropia app users and teams that need help with their account, installation or day-to-day use.',
+      sections: [
+        {
+          title: 'Contact information',
+          details: [
+            ['Support team', 'Kropia by AppToLast'],
+            ['Email', 'admin@apptolast.com'],
+            ['Contact form', 'https://kropia.apptolast.com/en#contact'],
+            ['Website', 'https://kropia.apptolast.com/en'],
+          ],
+          paragraphs: [
+            'You can contact us to report issues, ask questions about the app, request help with access or send improvement suggestions.',
+          ],
+        },
+        {
+          title: 'What support covers',
+          bullets: [
+            'Account access, sign-in and credential recovery.',
+            'Greenhouse, zone, sensor, setpoint, actuator and alert visibility.',
+            'Notifications, data history and unresolved critical state follow-up.',
+            'Operational questions from teams that already have an active Kropia installation.',
+            'Suggestions, general feedback and improvement requests.',
+          ],
+        },
+        {
+          title: 'Accounts and access model',
+          paragraphs: [
+            'Kropia is a companion app for connected greenhouse installations. Accounts are provided to users authorized by the organization or farm using the system.',
+            'The app does not sell digital content, subscriptions or features through in-app payments. If an organization contracts Kropia implementation, support or evolution services, that relationship is handled outside the app through a direct commercial agreement with AppToLast.',
+          ],
+        },
+        {
+          title: 'Response time',
+          paragraphs: [
+            'We review requests received by email or through the contact form and respond as soon as possible. For operational incidents, include your account email, the affected organization or installation, the device used and a clear description of the issue.',
           ],
         },
       ],
